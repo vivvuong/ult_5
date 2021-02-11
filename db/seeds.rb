@@ -6,12 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
 
+$i = 0
+$num = 676
 
-products_bomb = Product.create(title: "plsdontwork")
+while $i < $num  do
+    product_new = Product.create(title: Faker::Commerce.product_name, stock_quantity: Faker::Number.between(from: 1, to: 10), price: Faker::Commerce.price)
+    $i +=1
 
-if(products_bomb.valid?)
-    # do something
-else
-    puts "Invalid Product"
+    if(product_new.valid?)
+        puts "Product added"
+    else
+        puts "Invalid product"
+    end
+
 end
+
+
+
