@@ -23,5 +23,11 @@ while $i < $num  do
 
 end
 
+# first product starts at index 2 becauise i deleted 
+# the first product i put in and didn't reset the numbers. :(
+# first_product = Product.first
+# puts first_product.inspect
+
+
 
 
